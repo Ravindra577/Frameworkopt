@@ -1,4 +1,5 @@
-FROM tomcat:8
+FROM openjdk:8
 MAINTAINER Kavya
-# Take the war and copy to webapps of tomcat
-COPY target/*.war /usr/local/tomcat/webapps/myweb.war
+ADD target/your.jar  your.jar
+EXPOSE 8084
+ENTRYPOINT ["java", "-jar", "your.jar"]  
